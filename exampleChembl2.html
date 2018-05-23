@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SpecINT example</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Project Description">
+	<meta name="author" content="Project Keywords">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />			
+	<!--[if IE]><link href="css/style-ie.css" rel="stylesheet" type="text/css" /><![endif]-->	
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/site.js"></script>
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="lib/codemirror.js"></script>
+	<link rel="stylesheet" href="lib/codemirror.css">
+	<script src="mode/sparql/sparql.js"></script>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76153702-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+<div id="wrapper" class="letter">
+	<section id="banner">
+		<!-- <h1>How Do You <span>Nurture Your Money</span></h1> -->
+		<img src="images/banner.png" alt="Banner">
+	</section><!-- // end #banner -->
+	<header id="header">
+		<ul id="nav">
+			<li class="active"><a href="index.html">HOME</a></li>
+			<li><a href="example.html">EXAMPLES</a></li>
+			<li><a href="search.php">ENDPOINT</a></li>
+			<li><a href="references.html">REFERENCES</a></li>
+			<li><a href="contact.html">SUPPORT</a></li>
+		</ul>
+	</header><!-- // end #header -->
+	<div id="main-body" class="clearfix border" style="padding: 0px 10px;">
+		<div style="border:1px solid black;border-radius:5px;padding:10px 10px;text-align:center;">
+			<h1 style="text-align:left;">InChIkey: IENZQIKPVFGBNW-UHFFFAOYSA-N</h1>
+			<img src="http://cactus.nci.nih.gov/chemical/structure/InChIKey=IENZQIKPVFGBNW-UHFFFAOYSA-N/image?footer=IENZQIKPVFGBNW-UHFFFAOYSA-N&width=500" />
+		</div>
+		<table>
+			<tr>
+				<td><img style="width: 400px;" src="images/examples/exampleChembl2-coa.png"></img></td>
+				<td><img style="width: 400px;" src="images/examples/exampleChembl2-orie.png"></img></td>
+			</tr>
+		
+		</table>
+		<p>
+			<h4> Following queries can be run <a href="http://147.91.205.66:2020/sparql.html" target="_blank">here</a> using Local Student Server Endpoint.</h4> 
+		</p>
+		<br />
+	
+		<h2 class="desc">Get targets:</h2>	
+		<textarea cols="100" rows="10" id="sparql2">
+	PREFIX  drugbank1: <http://chem2bio2rdf.org/drugbank/resource/drugbank_drug/>
+	PREFIX  chembl_molecule: <http://rdf.ebi.ac.uk/resource/chembl/molecule/>
+	PREFIX  cco:  <http://rdf.ebi.ac.uk/terms/chembl#>
+	PREFIX  chembl_mapp: <http://cpctas-lcmb.pmf.kg.ac.rs/2012/3/chembl#>
+
+	SELECT DISTINCT  ?target
+	FROM <http://cpctas-lcmb.pmf.kg.ac.rs/2012/3/PIBAS/pibasmapping.owl>
+	FROM <http://cpctas-lcmb.pmf.kg.ac.rs/2012/3/PIBAS/chemblmapping.owl>
+	WHERE
+	  { {   { SERVICE SILENT <http://cheminfov.informatics.indiana.edu:8080/drugbank/sparql>
+				{ ?isValueOf <http://chem2bio2rdf.org/drugbank/resource/DBID> drugbank1:DB02375 .
+				  ?isValueOf <http://chem2bio2rdf.org/drugbank/resource/CID_GENE> ?target
+				}
+			}
+		  UNION
+			{ SERVICE SILENT <https://www.ebi.ac.uk/rdf/services/chembl/sparql/>
+				{ ?activity <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> cco:Activity .
+				  ?activity cco:hasMolecule chembl_molecule:CHEMBL164 .
+				  ?activity cco:hasAssay ?assay .
+				  ?assay cco:hasTarget ?target
+				}
+			}
+		}
+	  }	
+		</textarea>
+		
+		<script>  
+		  var editor = CodeMirror.fromTextArea(document.getElementById("sparql2"), {
+			mode: "application/sparql-query",
+			matchBrackets: true,
+			lineNumbers: true,
+			readOnly: true
+		  });
+		</script>
+		
+		<h2 class="desc">Get cell-line:</h2>
+		<textarea cols="100" rows="10" id="sparql3">
+	PREFIX  drugbank1: <http://chem2bio2rdf.org/drugbank/resource/drugbank_drug/>
+	PREFIX  chembl_molecule: <http://rdf.ebi.ac.uk/resource/chembl/molecule/>
+	PREFIX  cco:  <http://rdf.ebi.ac.uk/terms/chembl#>
+	PREFIX  chembl_mapp: <http://cpctas-lcmb.pmf.kg.ac.rs/2012/3/chembl#>
+
+	SELECT DISTINCT  ?cellline
+	FROM <http://cpctas-lcmb.pmf.kg.ac.rs/2012/3/PIBAS/pibasmapping.owl>
+	FROM <http://cpctas-lcmb.pmf.kg.ac.rs/2012/3/PIBAS/chemblmapping.owl>
+	WHERE
+	  { { { SERVICE SILENT <https://www.ebi.ac.uk/rdf/services/chembl/sparql/>
+			  { ?act ?o chembl_molecule:CHEMBL164 .
+				?assay cco:hasActivity ?act .
+				?assay cco:hasCellLine ?cellline
+			  }
+		  }
+		}
+	  }	
+        </textarea>
+		
+		<script>  
+		  var editor = CodeMirror.fromTextArea(document.getElementById("sparql3"), {
+			mode: "application/sparql-query",
+			matchBrackets: true,
+			lineNumbers: true,
+			readOnly: true
+		  });
+		</script>
+		
+		<h2 class="desc">Get IC50 value:</h2>
+        <textarea cols="100" rows="10" id="sparql4">
+	PREFIX  drugbank1: <http://chem2bio2rdf.org/drugbank/resource/drugbank_drug/>
+	PREFIX  chembl_molecule: <http://rdf.ebi.ac.uk/resource/chembl/molecule/>
+	PREFIX  cco:  <http://rdf.ebi.ac.uk/terms/chembl#>
+	PREFIX  chembl_mapp: <http://cpctas-lcmb.pmf.kg.ac.rs/2012/3/chembl#>
+
+	SELECT DISTINCT  ?cellline ?IC50value
+	FROM <http://cpctas-lcmb.pmf.kg.ac.rs/2012/3/PIBAS/pibasmapping.owl>
+	FROM <http://cpctas-lcmb.pmf.kg.ac.rs/2012/3/PIBAS/chemblmapping.owl>
+	WHERE
+	  { { { SERVICE SILENT <https://www.ebi.ac.uk/rdf/services/chembl/sparql/>
+			  { ?act ?o chembl_molecule:CHEMBL164 .
+				?act cco:standardUnits "nM" .
+				?act cco:standardType "IC50" .
+				?act cco:standardValue ?IC50value .
+				?assay cco:hasActivity ?act .
+				?assay cco:hasCellLine ?cellline
+			  }
+		  }
+		}
+	  }	
+		</textarea>	
+		
+		<script>  
+		  var editor = CodeMirror.fromTextArea(document.getElementById("sparql4"), {
+			mode: "application/sparql-query",
+			matchBrackets: true,
+			lineNumbers: true,
+			readOnly: true
+		  });
+		</script>
+	</div><!-- // end #main-body -->
+	<footer id="footer">
+		<span class="fr">Copyright &copy; <strong>SpecINT</strong>. All right reserved.</span>
+	</footer><!-- // end #footer -->
+</div><!-- // end #wrapper -->
+<p class="author"></p>
+	
+</body>
+</html>

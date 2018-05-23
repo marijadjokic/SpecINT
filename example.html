@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SpecINT example</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Project Description">
+	<meta name="author" content="Project Keywords">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />			
+	<!--[if IE]><link href="css/style-ie.css" rel="stylesheet" type="text/css" /><![endif]-->	
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/site.js"></script>
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76153702-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div id="wrapper" class="letter">
+	<section id="banner">
+		<!-- <h1>How Do You <span>Nurture Your Money</span></h1> -->
+		<img src="images/banner.png" alt="Banner">
+	</section><!-- // end #banner -->
+	<header id="header">
+		<ul id="nav">
+			<li class="active"><a href="index.html">HOME</a></li>
+			<li><a href="example.html">EXAMPLES</a></li>
+			<li><a href="search.php">ENDPOINT</a></li>
+			<li><a href="references.html">REFERENCES</a></li>
+			<li><a href="contact.html">SUPPORT</a></li>
+		</ul>
+	</header><!-- // end #header -->
+	<div id="main-body" class="clearfix">
+		<div id="content">
+			<article>
+				<h1>SpecINT - how it works</h1>
+				<p>
+					Today, there are several initiatives for biological and chemical datasets integration. With these initiatives we
+					have an ability to use existing data, extend our knowledge with new facts and rules, and integrate all the data into a single virtual repository (see Figure 1).
+					However, no initiative can gather all relevant data from the web because their amount is measured in terabytes.In other words,
+					web checking and data updating are very difficult and expensive operations.
+					One substance could be found in one initiative, but not in the another one, while stored data, whether the same or diverse, nonetheless is formatted differently. 
+					These facts motivated us to extend the existing data access points, and offer a possibility for mining new knowledge through "online" data integration.
+				</p>
+				<p style="text-align:center;">
+					<img src="images/Integration.png" style="width:550px;text-align:center;padding:20px;" /><br />
+					<b>Figure 1.</b> SpecINT mapping system for CPCTAS and CHEMBL, and their connections.
+				</p>
+				<p>
+					Pre-screening of (non)synthesized active substances should precede any experiment in the laboratory.
+					It is necessary to do so, because collecting the relevant information on Internet can significantly save up the time soent in search for all 
+					available and needed resources. Accordingly, the main questions posed in this process are:
+					<ol type="1">
+					    <li>Whether a substance has already been synthesized in the world? </li>
+					    <li>Can we find the cytotoxicity results for substance influence on specific cell-lines? </li>
+					    <li>Are there any complementary data which may be relevant and useful for new experiments and used for QSAR analyze? </li>
+					</ol>
+				</p>
+				<h1>In the background</h1>
+				<p>		
+					After software checks momentarily accessible endpoints and existing paths between data sources within an initiative, user can see two images - 
+					the former presenting rough data sources' connection and common data source and the latter presenting current ties and their directions.
+					Following the existing paths, software constructs purposive SPARQL queries which help chemists and biologists with their work.
+				</p>
+				<div style="text-align:center;margin: 0px 0px 35px;">
+					<img style="width: 400px;text-align:center;" src="images/examples/example4-coa.png"></img><br />
+					<b>Figure 2.</b> Undirected graph for CPCTAS (Bio2RDF) and CHEMBL (Chem2Bio2RDF).<br /><br />
+					<p><b>Fiedler vector</b> - [0.228 0.228 -0.399 -0.399 0.228 0.228 -0.399 0.228 -0.399 0.000 0.228 0.228]</p>
+					
+					<img style="width: 400px;text-align:center;" src="images/examples/example4-orie.png"></img><br />
+					<b>Figure 3.</b> Directed graph for CPCTAS (Bio2RDF) and CHEMBL (Chem2Bio2RDF).<br /><br />
+					<p><b>Page rank</b> - {12: 0.027, 15: 0.012, 21: 0.154, 22: 0.077, 19: 0.027, 29: 0.012, 1: 0.088, 0: 0.154, 4: 0.064, 8: 0.012, 20: 0.027, 33: 0.012}</p>
+				</div>
+				<h1>Examples</h1>
+				<p>
+					<ol style="padding:0">
+					    <li><a href="example1.html" target="_blank">EXAMPLE 1</a></li>
+					    <li><a href="example2.html" target="_blank">EXAMPLE 2</a></li>
+					    <li><a href="example3.html" target="_blank">EXAMPLE 3</a></li>
+					    <li><a href="example4.html" target="_blank">EXAMPLE 4</a></li>
+					</ol>
+					<!--<h2>Substance exists only in CPCTAS data source</h2>
+					<ol style="padding:0">
+					    <li><a href="examplePibas1.html" target="_blank">EXAMPLE 6</a></li>
+					    <li><a href="examplePibas2.html" target="_blank">EXAMPLE 7</a></li>
+					</ol>
+					<h2>Substance exists only in CHEMBL data source</h2>
+					<ol style="padding:0">
+					    <li><a href="exampleChembl1.html" target="_blank">EXAMPLE 8</a></li>
+					    <li><a href="exampleChembl2.html" target="_blank">EXAMPLE 9</a></li>
+					</ol> -->
+				</p>
+			</article>		
+		</div><!-- // end #content -->
+		<aside id="sidebar">
+			<h1>LATEST NEWS</h1>
+			<!-- twitter feed -->
+            <a class="twitter-timeline"  href="https://twitter.com/spectralni/lists/bioinformatics1" data-widget-id="658566232925409280">Tweets from https://twitter.com/spectralni/lists/bioinformatics1</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>                          
+		</aside><!-- // end #sidebar -->
+	</div><!-- // end #main-body -->
+	<footer id="footer">
+		<span class="fr">Copyright &copy; <strong>SpecINT</strong>. All right reserved.</span>
+	</footer><!-- // end #footer -->
+</div><!-- // end #wrapper -->
+<p class="author"></p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+#!/usr/bin/env python
+import networkx as nx
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+G = nx.DiGraph()
+
+G.add_node(0)
+G.add_node(1)
+G.add_node(6)
+G.add_node(10)
+G.add_node(13)
+G.add_node(15)
+G.add_node(17)
+G.add_node(23)
+G.add_node(25)
+G.add_node(26)
+G.add_node(27)
+G.add_node(32)
+G.add_node(38)
+G.add_node(40)
+G.add_node(42)
+#fixed node 100
+G.add_node(100)
+G.add_edge(0,100)
+G.add_edge(1,100)
+G.add_edge(6,100)
+G.add_edge(10,100)
+G.add_edge(13,100)
+G.add_edge(15,100)
+G.add_edge(17,100)
+G.add_edge(23,100)
+G.add_edge(25,100)
+G.add_edge(26,100)
+G.add_edge(27,100)
+G.add_edge(32,100)
+G.add_edge(38,100)
+G.add_edge(40,100)
+G.add_edge(42,100)
+
+G.add_edge(0,1)
+G.add_edge(1,13)
+G.add_edge(1,25)
+G.add_edge(10,1)
+G.add_edge(10,6)
+G.add_edge(10,15)
+G.add_edge(10,23)
+G.add_edge(10,25)
+G.add_edge(15,1)
+G.add_edge(15,10)
+G.add_edge(15,25)
+G.add_edge(15,6)
+G.add_edge(15,23)
+G.add_edge(25,1)
+G.add_edge(25,10)
+G.add_edge(26,27)
+G.add_edge(27,23)
+
+print 'Degree: '
+print G.degree(G.nodes())
+print 'PG:'
+print nx.pagerank(G)
+pos=nx.circular_layout(G,dim=50, scale=100)
+plt.clf()
+nx.draw(G,with_labels=True)
+plt.savefig('C:/Users/Branko/Desktop/GUGOEEXESWIERI-UHFFFAOYSA-N_oriented.png')

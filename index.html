@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SpecINT framework</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Project Description">
+	<meta name="author" content="Project Keywords">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />			
+	<!--[if IE]><link href="css/style-ie.css" rel="stylesheet" type="text/css" /><![endif]-->	
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/site.js"></script>
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76153702-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<div id="wrapper" class="letter">
+	<section id="banner">
+		<!-- <h1>How Do You <span>Nurture Your Money</span></h1> -->
+		<img src="images/banner.png" alt="Banner">
+	</section><!-- // end #banner -->
+	<header id="header">
+		<ul id="nav">
+			<li class="active"><a href="index.html">HOME</a></li>
+			<li><a href="example.html">EXAMPLES</a></li>
+			<li><a href="search.php">ENDPOINT</a></li>
+			<li><a href="references.html">REFERENCES</a></li>
+			<li><a href="contact.html">SUPPORT</a></li>
+		</ul>
+	</header>
+	<div id="main-body" class="clearfix">
+		<div id="content">
+			<article>
+				<h1>SpecINT framework</h1>
+				<!-- <img src="images/content-image-1.jpg" alt="Image" class="left"> -->	
+				<p>
+					New data about chemical compounds, influence they have on cancer cell-lines, genes and proteins, genetic variations and cell pathways has been emerging at a 
+					staggeringly rapid pace in recent chemical and biological experiments. Laboratories function independently manipulating with a portion of data, while the total 
+					amount of data they operate with being extremely large, seems impossible to organize in a unique storage with coordinated standards, acceptable for the entire research community.
+					Data sources integration and determination of thepatterns that govern them is of critical interest.
+				</p>
+				<p>
+					<b>SpecINT</b> is a web framework for data integration and federation over cheminformatics and bioinformatics data sources based on Semantic Web technologies and spectral graph theory. 
+					It introduces a SPARQL query builder, which supports the SPARQL query over heterogeneous data sources without any knowledge of the SPARQL query and the data. 
+					This is a support framework developed to reinforce research activities in <a href="http://cpctas-lcmb.pmf.kg.ac.rs/lcmb/index.php?jezik=english" target="_blank">Centre for preclinical testing of active substances (CPCTAS)</a> 
+					meeting their need to monitor results on a global scale. A need of the kind originates from the fact that different labs synthesize and test different substances under diverse conditions, maybe unfamiliar to the others. 
+					By means of such a frame biologists and chemists could explore various initiatives, find intersection points, and even discover, new data.
+					<br /><br />					    
+					<b>SpecINT</b> provides to researchers the additional information about the same experimental results conducted at any independent
+					laboratory without any prior knowledge about it. It includes following contributions:
+					<ul id="example">
+						<li><b>Advancement:</b> We developed a flexible SPARQL query generator based on mathematical graph concept. Support mechanism are graph eigenvectors which influence on query
+						source selection, ranking and joining.</li>
+						<li><b>Scalability:</b> We proposed a straightforward model for linking data from new and traditional data sources. 
+						At the same time, we can collect relevant information from same-topic data sources.</li> 
+						<li><b>Federation:</b> Federated SPARQL queries gather novel and complementary data about compounds.</li>
+						<li><b>Availability:</b> We made our data available to the research community.</li>		
+					</ul>				
+				</p>
+				<h1>Problems in data integration for cheminformatics and bioinformatics repositories</h1>
+				<p> When the Linked Data principles and goals were presented, huge amount of data has been converted to RDF with the vision to create a globally connected data space. 
+				    Laboratories function independently, they perform different kinds of experiments transform data into Semantic Web context on they own and this process lead us to:
+					<ul id="example2">
+						<li>different associated information models</li>
+						<li>specific notions</li>
+						<li>naming conventions</li>
+						<li>units of measurement</li>
+						<li>parameters</li>	
+						<li>conditions</li>
+					</ul>
+				</p>
+				<p>
+
+				    This reflects heterogeneity of data models, integration and retrieval data methods. In order to write a query, a researcher
+					must have prior knowledge about the data repository, because the terms, properties and data location must be explicitly embedded.  						
+				    If one is not familiar with large sets of data published, they need to discover all possible interlinks for SPARQL queries construction. 
+					In many integrated systems, no simple rules and conventions can be followed. We need to make an effort and invest a lot of time to discover each connection, 
+					their orientation between data sources, specific properties over different data sources, etc. 
+				</p>
+				<p>
+					The <b>SpecINT</b> solves some of the highlighted deficiencies of data integration by discovering the most probable paths between substances and compounds over different repositories 
+					If one wished, one could participate in selecting data sources to be involved, while in the background SpecINT would automatically connect related data from large initiatives. 			
+					Basically, our approach starts from RDF triples, generate specific graphs and use its mathematical invariants for SPARQL queries construction. For more information see the following <a href="example.html">link</a>.
+				</p>			
+				<!-- The SpecINT uses SPARQL query to discover the relationship among same substances/compounds presented within different repositories and with different nomenclature. The most probable paths between them are found and used for query construction in order to get non-empty results. 				
+				With our framework client can enter basic substance's data and gather all relevant data from other similar storages.	-->				
+			</article>
+			<section class="column fl">
+				<article>
+					<h2>Cheminformatics and bioinformatics data sources</h2>
+					<p> 							
+						In last decade, several large cheminformatics and bioinformatics initiatives were founded. Focus of the initiatives such as <a href="http://www.bio2rdf.org/" target="_blank">Bio2RDF</a> and 
+						<a href="http://www.w3.org/wiki/HCLSIG/LODD" target="_blank">LODD</a> is linking biological data and drug data respectively using RDF.
+						The most successful initiative for the inclusion of chemogenomic and systems chemical biology information that crosses the domains of chemistry and biology is <a href="http://cheminfov.informatics.indiana.edu:8080/c2b2r/" target="_blank">Chem2Bio2RDF</a>. 
+						<br /><br />
+						Other popular integrational solutions based on Semantic web technologies are: 
+						<a href="https://www.ebi.ac.uk/unichem/" target="_blank">Unichem</a>, <a href="http://rdf.chemspider.com/" target="_blank">ChemSpider</a>,
+						<a href="https://pubchem.ncbi.nlm.nih.gov/rdf/" target="_blank">Pubchem</a>, <a href="https://www.ebi.ac.uk/chembl/" target="_blank">CHEMBL</a>, etc.
+						<br /><br />
+						The SpecINT relies on these initiatives with the main purpose of consolidation their results in one place and simple integration of new and small, same-domain 
+						laboratory work.
+					</p>
+				</article>
+			</section>
+			<section class="column fr">
+				<article>
+					<h2>Centre for preclinical testing of active substances (CPCTAS)</h2>
+					<p style="text-align:justify;"><img src="images/cpctas.png" width="100px" style="float:right;clear:left;padding:0px 10px;" /> Laboratory for Cell and Molecular biology is a central part in charge for coordinating activities of Centre for Preclinical Testing of Active Substances and, accordingly, 
+					of organization and activities subject to accreditation of Laboratory in accordance with SRPS ISO/IEC 17025:2006.</p>
+					<p>Vision of the Laboratory for Cell and Molecular Biology is to develop itself into the modern European research institution acknowledged for its scientific achievements as well 
+					as the achievements of its employees in the field of cell and molecular biological testing of active substances.</p>
+					<a href="http://cpctas-lcmb.pmf.kg.ac.rs/lcmb/index.php?jezik=english" target="_blank">Read more </a>
+				</article>
+			</section>
+			<p style=clear:both;>
+				<table>
+					<tr>
+						<td><a href="https://pubchem.ncbi.nlm.nih.gov/rdf/" target="_blank"><img src="images/initiative/pubchem.gif" width="150px" /></a></td>
+						<td><a href="http://cheminfov.informatics.indiana.edu:8080/c2b2r/" target="_blank"><img src="images/initiative/chem2bio.gif" width="150px" /></a></td>
+						<td><a href="http://www.bio2rdf.org/" target="_blank"><img src="images/initiative/bio2rdf.png" width="150px" /></a></td>
+						<td><a href="http://rdf.chemspider.com/" target="_blank"><img src="images/initiative/chemspider.jpg" width="150px" /></a></td>
+					</tr>
+				</table>
+			</p>
+		</div><!-- // end #content -->
+		<aside id="sidebar">
+			<h1>LATEST NEWS</h1>
+			<!--<article>
+				<h2>Title of news 1</h2>
+				<p>Lorem ipsum dolor sit amet, ius ut eruditi inimicus facilisis. Ut voluptua detraxit pri, sea at animal concludaturque.</p>
+				<a href="#">Read more </a>
+			</article>
+			<article>
+				<h2>Title of news 1</h2>
+				<p>Lorem ipsum dolor sit amet, ius ut eruditi inimicus facilisis. Ut voluptua detraxit pri, sea at animal concludaturque.</p>
+				<a href="#">Read more </a><br/><br/>
+				<img src="images/content-image-2.jpg" alt="Image" >
+			</article> -->
+			<!-- twitter feed -->
+            <a class="twitter-timeline"  href="https://twitter.com/spectralni/lists/bioinformatics1" data-widget-id="658566232925409280">Tweets from https://twitter.com/spectralni/lists/bioinformatics1</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>                          
+		</aside><!-- // end #sidebar -->
+	</div><!-- // end #main-body -->
+	<footer id="footer">
+		<!-- <span class="fl"><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></span> -->
+		<span class="fr">Copyright &copy; <strong>SpecINT</strong>. All right reserved.</span>
+	</footer><!-- // end #footer -->
+</div><!-- // end #wrapper -->
+<p class="author"></p>
+
+<!-- strana kako se registruje... 
+references: chem2bio, bio2rdf, ... -->
+
+</body>
+</html>
