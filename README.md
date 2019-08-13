@@ -1,7 +1,9 @@
 # SpecINT
-A framework for data integration over cheminformatics and bioinformatics RDF repositories.
+**A framework for data integration over cheminformatics and bioinformatics RDF repositories.**
 
 Authors: Branko Arsić, Marija Đokić-Petrović, Petar Spalević, Ivan Milentijević, Dejan Rančić & Marko Živanović
+
+ORIGINAL PAPER: B. Arsić, M. Đokić-Petrović, P. Spalević, I. Milentijević, D. Rančić, M. Živanović. SpecINT: A framework for data integration over cheminformatics and bioinformatics RDF repositories. Semantic Web - Interoperability, Usability, Applicability, Vol. 10, No. 4, pp. 795-813, 2019. DOI: 10.3233/SW-180327
 
 
 # Public instance
